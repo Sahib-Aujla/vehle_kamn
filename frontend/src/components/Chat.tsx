@@ -15,11 +15,11 @@ const Chat = () => {
       message: userMessage,
       time: Date.now(),
     };
-    setMessages((prev) => [...prev, m]);
+    setMessages((prev) => [m, ...prev]);
   };
   return (
     <div className="w-full h-[80vh] ">
-      <div className="w-full h-full flex flex-col-reverse px-20 py-5">
+      <div className="w-full h-full flex flex-col-reverse px-20 py-5 overflow-y-scroll">
         {messages.map((message) => (
           <div
             className={`w-full flex ${
