@@ -11,7 +11,7 @@ const SplashScreen = () => {
   }, []);
   return (
     <div
-      className={`absolute w-full h-full z-90  bg-gradient-to-r from-black to-blue-950 ${
+      className={`absolute w-full h-full z-50  bg-gradient-to-r from-black to-blue-950 ${
         isHidden ? "hidden" : ""
       }`}
     >
