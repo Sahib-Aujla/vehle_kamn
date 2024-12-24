@@ -11,7 +11,7 @@ const Chat = () => {
   const handleClick = () => {
     if (!userMessage) return;
     const m: Message = {
-      isUser: true,
+      isUser: false,
       message: userMessage,
       time: Date.now(),
     };
@@ -26,16 +26,17 @@ const Chat = () => {
               message.isUser ? "justify-end" : "justify-start"
             }`}
           >
-            {message.message}
+            <div className=" bg-gray-600 w-1/2 m-2 p-2 rounded-lg">
+              {message.message}
+            </div>
           </div>
         ))}
       </div>
       <div className="absolute bottom-8 w-3/4 h-11 flex justify-center items-center">
         <div className="  w-1/2 h-10 flex z-10">
-          <input
+          <textarea
             className="border-none bg-slate-500 w-3/4 h-full text-white focus:outline-0  z-10 p-4 rounded-md"
             placeholder="Likh fer ....."
-            type="text"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
           />
